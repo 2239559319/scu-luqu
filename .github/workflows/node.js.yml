@@ -19,9 +19,10 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '12.x'
+    - name: install
+      run: yarn
     - name: build
-      - run: yarn
-      - run: yarn start
+      run: yarn start
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v2
       with:

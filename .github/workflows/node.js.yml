@@ -15,12 +15,13 @@ jobs:
     - name: prepare
       uses: actions/checkout@v2
     # Setup .npmrc file to publish to npm
+    - name: setup
       uses: actions/setup-node@v2
       with:
         node-version: '12.x'
     - name: build
-      run: yarn
-      run: yarn start
+      - run: yarn
+      - run: yarn start
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v2
       with:

@@ -18,10 +18,10 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: '12.x'
-    - run: yarn
-    - run: yarn start
+      run: yarn
+      run: yarn start
     - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@v2
+    - uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: ./luqu.xlsx
